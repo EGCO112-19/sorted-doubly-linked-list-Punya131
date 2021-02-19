@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedlist.h"
-
 int main( )
 { 
    LLPtr startPtr = NULL; // initially there are no nodes
@@ -21,6 +20,7 @@ int main( )
             scanf( "%d", &item );
             insert( &startPtr, item ); // insert item in list
             printList( startPtr );
+            printListR( startPtr );
             break;
          case 2: // delete an element
             // if list is not empty
@@ -32,6 +32,7 @@ int main( )
                if ( deletes( &startPtr, item ) ) { // remove item
                   printf( "%d deleted.\n", item );
                   printList( startPtr );
+                  printListR( startPtr );
                } // end if
                else {
                   printf( "%d not found.\n\n", item );
@@ -50,7 +51,7 @@ int main( )
 
       printf( "%s", "? " );
       scanf( "%u", &choice );
-   } // end while
+    } // end while
 
    puts( "End of run." );
-} // end main
+}
